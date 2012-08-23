@@ -6,6 +6,6 @@ php:
 
 before_script:
     - sudo apt-get install php5-imap
-    - sudo service apache2 restart
+    - php --ini
     - wget http://getcomposer.org/composer.phar
     - php composer.phar install --dev
