@@ -12,11 +12,11 @@
     ],
     "require": {
         "php": ">=5.3.2",
-        "symfony/twig-bundle": "dev-master",
-        "symfony/framework-bundle": "dev-master",
-        "symfony/swiftmailer-bundle": "dev-master",
-        "instaclick/bounce-mail-handler": "dev-master",
-        "symfony/finder": "dev-master"
+        "symfony/twig-bundle": ">=2.1-dev,<2.3-dev",
+        "symfony/framework-bundle": ">=2.1-dev,<2.3-dev",
+        "symfony/swiftmailer-bundle": ">=2.1-dev,<2.3-dev",
+        "symfony/finder": ">=2.1-dev,<2.3-dev",
+        "instaclick/bounce-mail-handler": "dev-master"
     },
     "require-dev": {
         "instaclick/base-test-bundle": "dev-master"

@@ -8,15 +8,15 @@
         <!-- Process Services: Mail Composer -->
         <service id="base.mail.service.composer" class="IC\Bundle\Base\MailBundle\Service\ComposerService">
             <call method="setDefaultSenderName">
-                <argument>%base.mail.parameter.composer.default_sender.name%</argument>
+                <argument>%ic_base_mail.composer.default_sender.name%</argument>
             </call>
             <call method="setDefaultSenderAddress">
-                <argument>%base.mail.parameter.composer.default_sender.address%</argument>
+                <argument>%ic_base_mail.composer.default_sender.address%</argument>
             </call>
         </service>
 
         <!-- Process Services: Mail Sender -->
-        <service id="base.mail.service.sender" class="IC\Bundle\Base\MailBundle\Service\SenderService">
+        <service id="ic_base_mail.service.sender" class="IC\Bundle\Base\MailBundle\Service\SenderService">
             <call method="setMailer">
                 <argument type="service" id="mailer"/>
             </call>
@@ -26,21 +26,21 @@
         </service>
 
         <!-- Process Services: Mail Bouncer -->
-        <service id="base.mail.service.bounce_mail" class="IC\Bundle\Base\MailBundle\Service\BounceMailService">
+        <service id="ic_base_mail.service.bounce_mail" class="IC\Bundle\Base\MailBundle\Service\BounceMailService">
             <call method="setBounceMailHandler">
-                <argument type="service" id="base.mail.service.bounce_mail_handler"/>
+                <argument type="service" id="ic_base_mail.service.bounce_mail_handler"/>
             </call>
         </service>
 
         <!-- Process Services: Mail Bouncer Handler -->
-        <service id="base.mail.service.bounce_mail_handler" class="BounceMailHandler\BounceMailHandler">
-            <property name="mailhost">%base.mail.parameter.mail_bounce.mailhost%</property>
-            <property name="port">%base.mail.parameter.mail_bounce.port%</property>
-            <property name="mailbox_username">%base.mail.parameter.mail_bounce.username%</property>
-            <property name="mailbox_password">%base.mail.parameter.mail_bounce.password%</property>
-            <property name="service">%base.mail.parameter.mail_bounce.service%</property>
-            <property name="service_option">%base.mail.parameter.mail_bounce.option%</property>
-            <property name="boxname">%base.mail.parameter.mail_bounce.mailbox%</property>
+        <service id="ic_base_mail.service.bounce_mail_handler" class="BounceMailHandler\BounceMailHandler">
+            <property name="mailhost">%ic_base_mail.mail_bounce.mailhost%</property>
+            <property name="port">%ic_base_mail.mail_bounce.port%</property>
+            <property name="mailbox_username">%ic_base_mail.mail_bounce.username%</property>
+            <property name="mailbox_password">%ic_base_mail.mail_bounce.password%</property>
+            <property name="service">%ic_base_mail.mail_bounce.service%</property>
+            <property name="service_option">%ic_base_mail.mail_bounce.option%</property>
+            <property name="boxname">%ic_base_mail.mail_bounce.mailbox%</property>
         </service>
 
     </services>

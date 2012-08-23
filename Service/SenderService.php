@@ -92,8 +92,7 @@ class SenderService extends ContainerAware
      */
     private function convertToSwiftMessage(Message $message)
     {
-        $templatingService = $this->getTemplatingService();
-        $renderedMessage   = $templatingService->render($message->getTemplateName(), $message->getContexts());
+        $renderedMessage = $this->renderTemplate($message->getTemplateName(), $message->getContexts());
 
         $envelope = new \Swift_Message();
 
@@ -108,18 +107,26 @@ class SenderService extends ContainerAware
     }
 
     /**
-     * Retrieve the templating service
+     * Retrieve the processed template content
      *
      * {@internal Templating service requires to be inside of a Request scope.
      *            This introduces a hack required by Symfony in order to work smoothly. }}
      *
-     * @return \Symfony\Component\Templating\EngineInterface
+     * @param string $templateName
+     * @param string $contexts
+     *
+     * @return string
      */
-    private function getTemplatingService()
+    private function renderTemplate($templateName, $contexts)
     {
         $this->container->enterScope('request');
         $this->container->set('request', Request::createFromGlobals(), 'request');
 
-        return $this->container->get('templating');
+        $templatingService = $this->container->get('templating');
+        $templateContent   = $templatingService->render($templateName, $contexts);
+
+        $this->container->leaveScope('request');
+
+        return $templateContent;
     }
 }

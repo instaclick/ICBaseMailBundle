@@ -31,50 +31,23 @@ class ICBaseMailExtension extends Extension
         $loader->load('services.xml');
 
         // Composer default sender configuration values
-        $container->setParameter(
-            'base.mail.parameter.composer.default_sender.name',
-            $config['composer']['default_sender']['name']
-        );
+        $parameterList = array('name', 'address');
 
-        $container->setParameter(
-            'base.mail.parameter.composer.default_sender.address',
-            $config['composer']['default_sender']['address']
-        );
+        foreach ($parameterList as $parameter) {
+            $container->setParameter(
+                $this->getAlias() . '.composer.default_sender.' . $parameter,
+                $config['composer']['default_sender'][$parameter]
+            );
+        }
 
         // Mail bounce configuration values
-        $container->setParameter(
-            'base.mail.parameter.mail_bounce.mailhost',
-            $config['mail_bounce']['mailhost']
-        );
+        $parameterList = array('mailhost', 'port', 'username', 'password', 'service', 'option', 'mailbox');
 
-        $container->setParameter(
-            'base.mail.parameter.mail_bounce.port',
-            $config['mail_bounce']['port']
-        );
-
-        $container->setParameter(
-            'base.mail.parameter.mail_bounce.username',
-            $config['mail_bounce']['username']
-        );
-
-        $container->setParameter(
-            'base.mail.parameter.mail_bounce.password',
-            $config['mail_bounce']['password']
-        );
-
-        $container->setParameter(
-            'base.mail.parameter.mail_bounce.service',
-            $config['mail_bounce']['service']
-        );
-
-        $container->setParameter(
-            'base.mail.parameter.mail_bounce.option',
-            $config['mail_bounce']['option']
-        );
-
-        $container->setParameter(
-            'base.mail.parameter.mail_bounce.mailbox',
-            $config['mail_bounce']['mailbox']
-        );
+        foreach ($parameterList as $parameter) {
+            $container->setParameter(
+                $this->getAlias() . '.mail_bounce.' . $parameter,
+                $config['mail_bounce'][$parameter]
+            );
+        }
     }
 }
