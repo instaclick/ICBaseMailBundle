@@ -6,6 +6,6 @@ php:
 
 before_script:
     - sudo apt-get install php5-imap
-    - echo "extension=imap.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+    - sudo echo "extension=imap.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
     - wget http://getcomposer.org/composer.phar
     - php composer.phar install --dev
