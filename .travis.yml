@@ -5,7 +5,7 @@ php:
     - 5.4
 
 before_script:
-    - sudo aptitude search c-client
     - sudo apt-get install php5-imap
+    - sudo service apache2 restart
     - wget http://getcomposer.org/composer.phar
     - php composer.phar install --dev
