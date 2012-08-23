@@ -111,9 +111,9 @@ class SenderService extends ContainerAware
      * Retrieve the templating service
      *
      * {@internal Templating service requires to be inside of a Request scope.
-     *            This introduces a hack required by Symfony in order to work smoothly.}
+     *            This introduces a hack required by Symfony in order to work smoothly. }}
      *
-     * @return \Symfony\Bundle\TwigBundle\TwigEngine
+     * @return \Symfony\Component\Templating\EngineInterface
      */
     private function getTemplatingService()
     {
