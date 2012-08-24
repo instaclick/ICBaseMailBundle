@@ -22,7 +22,7 @@ use IC\Bundle\Base\MailBundle\Exception\SenderServiceException;
 class SenderService extends ContainerAware
 {
     /**
-     * @var \Swift_Mailer mail transport agent
+     * @var \Swift_Mailer Mail Transport Agent
      */
     private $mailer;
 
@@ -44,9 +44,11 @@ class SenderService extends ContainerAware
      * message pool is used and multiple messages are sent, so this method will be checking whether or not there are any
      * messages sent at all.
      *
-     * @param \IC\Bundle\Base\MessageBundle\Model\Message $message
+     * @param \IC\Bundle\Base\MailBundle\Entity\Message $message
      *
      * @return boolean TRUE only if there are at least one message sent.
+     *
+     * @throws \IC\Bundle\Base\MailBundle\Exception\SenderServiceException
      */
     public function send(Message $message)
     {
@@ -67,11 +69,9 @@ class SenderService extends ContainerAware
     /**
      * Really perform sending the given message.
      *
-     * @param \IC\Bundle\Base\MessageBundle\Model\Message $message
+     * @param \IC\Bundle\Base\MailBundle\Entity\Message $message
      *
      * @return boolean TRUE only if there are at least one message sent.
-     *
-     * @throws \IC\Bundle\Base\ComponentBundle\Exception\ServiceException
      */
     protected function performSending(Message $message)
     {
@@ -92,7 +92,7 @@ class SenderService extends ContainerAware
      */
     private function convertToSwiftMessage(Message $message)
     {
-        $renderedMessage = $this->renderTemplate($message->getTemplateName(), $message->getContexts());
+        $renderedMessage = $this->renderTemplate($message->getTemplateName(), $message->getParameterList());
 
         $envelope = new \Swift_Message();
 
@@ -113,17 +113,17 @@ class SenderService extends ContainerAware
      *            This introduces a hack required by Symfony in order to work smoothly. }}
      *
      * @param string $templateName
-     * @param string $contexts
+     * @param array  $parameterList
      *
      * @return string
      */
-    private function renderTemplate($templateName, $contexts)
+    private function renderTemplate($templateName, array $parameterList)
     {
         $this->container->enterScope('request');
         $this->container->set('request', Request::createFromGlobals(), 'request');
 
         $templatingService = $this->container->get('templating');
-        $templateContent   = $templatingService->render($templateName, $contexts);
+        $templateContent   = $templatingService->render($templateName, $parameterList);
 
         $this->container->leaveScope('request');
 

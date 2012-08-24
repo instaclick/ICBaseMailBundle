@@ -34,7 +34,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
         $message->setRecipient($data['recipient']);
         $message->setSubject($data['subject']);
         $message->setTemplateName($data['template_name']);
-        $message->setContexts(array());
+        $message->setParameterList(array());
 
         $this->assertEquals($expected, $message->isUsable());
     }

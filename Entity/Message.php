@@ -51,7 +51,7 @@ class Message
     /**
      * @var array
      */
-    protected $contexts = array();
+    protected $parameterList = array();
 
     /**
      * @var string
@@ -209,23 +209,23 @@ class Message
     }
 
     /**
-     * Get the contexts.
+     * Get the parameterList.
      *
-     * @return string
+     * @return array
      */
-    public function getContexts()
+    public function getParameterList()
     {
-        return $this->contexts;
+        return $this->parameterList;
     }
 
     /**
-     * Set the contexts.
+     * Set the parameterList.
      *
-     * @param string $contexts
+     * @param array $parameterList
      */
-    public function setContexts($contexts)
+    public function setParameterList(array $parameterList = array())
     {
-        $this->contexts = $contexts;
+        $this->parameterList = $parameterList;
     }
 
     /**
