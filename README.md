@@ -14,29 +14,29 @@ Installing this bundle can be done through these simple steps:
 
 1. Add this bundle to your project as a composer dependency:
 
-```javascript
-// composer.json
-{
-    // ...
-    require: {
+    ```javascript
+    // composer.json
+    {
         // ...
-        "instaclick/base-mail-bundle": "dev-master"
+        require: {
+            // ...
+            "instaclick/base-mail-bundle": "dev-master"
+        }
     }
-}
-```
+    ```
 
 2. Add this bundle in your application kernel:
 
-```php
-// application/ApplicationKernel.php
-public function registerBundles()
-{
-    // ...
-    $bundles[] = new IC\Bundle\Base\MailBundle\ICBaseTestBundle();
-
-    return $bundles;
-}
-```
+    ```php
+    // application/ApplicationKernel.php
+    public function registerBundles()
+    {
+        // ...
+        $bundles[] = new IC\Bundle\Base\MailBundle\ICBaseTestBundle();
+    
+        return $bundles;
+    }
+    ```
 
 ## Configuring the bundle
 
