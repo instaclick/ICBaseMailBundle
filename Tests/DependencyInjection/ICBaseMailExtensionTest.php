@@ -65,7 +65,7 @@ class ICBaseMailExtensionTest extends \PHPUnit_Framework_TestCase
         $this->createFullConfiguration();
 
         $this->assertParameter('John Smith', 'ic_base_mail.composer.default_sender.name');
-        
+
         $this->assertDICConstructorArguments('ic_base_mail.service.composer', array());
         $this->assertDICConstructorArguments('ic_base_mail.service.sender', array());
         $this->assertDICConstructorArguments('ic_base_mail.service.bounce_mail', array());
@@ -96,15 +96,6 @@ class ICBaseMailExtensionTest extends \PHPUnit_Framework_TestCase
         $loader->load(array($config), $this->containerBuilder);
     }
 
-    private function assertAlias($value, $key)
-    {
-        $this->assertEquals(
-            $value,
-            (string) $this->containerBuilder->getAlias($key),
-            sprintf('%s alias is correct', $key)
-        );
-    }
-
     private function assertParameter($value, $key)
     {
         $this->assertEquals(
@@ -112,16 +103,6 @@ class ICBaseMailExtensionTest extends \PHPUnit_Framework_TestCase
             $this->containerBuilder->getParameter($key),
             sprintf('%s parameter is correct', $key)
         );
-    }
-
-    private function assertHasDefinition($id)
-    {
-        $this->assertTrue(($this->containerBuilder->hasDefinition($id) ?: $this->containerBuilder->hasAlias($id)));
-    }
-
-    private function assertNotHasDefinition($id)
-    {
-        $this->assertFalse(($this->containerBuilder->hasDefinition($id) ?: $this->containerBuilder->hasAlias($id)));
     }
 
     private function assertDICConstructorArguments($id, $args)
