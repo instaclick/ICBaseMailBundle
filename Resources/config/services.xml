@@ -6,7 +6,7 @@
     <services>
 
         <!-- Process Services: Mail Composer -->
-        <service id="base.mail.service.composer" class="IC\Bundle\Base\MailBundle\Service\ComposerService">
+        <service id="ic_base_mail.service.composer" class="IC\Bundle\Base\MailBundle\Service\ComposerService">
             <call method="setDefaultSenderName">
                 <argument>%ic_base_mail.composer.default_sender.name%</argument>
             </call>

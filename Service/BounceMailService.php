@@ -55,7 +55,7 @@ class BounceMailService
      *
      * @throws \Exception
      */
-    public function setLocalMailboxPath($localMailboxPath= null)
+    public function setLocalMailboxPath($localMailboxPath = null)
     {
         if ( ! $localMailboxPath) {
             return;

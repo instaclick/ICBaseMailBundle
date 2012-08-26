@@ -32,10 +32,20 @@ class BounceMailServiceTest extends \PHPUnit_Framework_TestCase
 
     public function provideDataForInvalidSetLocalMailboxPath()
     {
+        $filePath = tempnam(sys_get_temp_dir(), 'test_');
+
         return array(
             array('/tmp/' . uniqid()), // Unexistent file
-            array('/var/log/apache2/access.log'), // Not under HOME directory
+            array($filePath), // Not under HOME directory
         );
+    }
+
+    public function testNullableSetLocalMailboxPath()
+    {
+        $bounceMailService = new BounceMailService();
+        $return            = $bounceMailService->setLocalMailboxPath(null);
+
+        $this->assertNull($return);
     }
 
     public function testExecute()
