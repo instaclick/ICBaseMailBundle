@@ -10,8 +10,8 @@ use BounceMailHandler\BounceMailHandler;
 /**
  * Bounce mail Service
  *
- * @author Guilherme Blanco <gblanco@nationalfibre.net>
- * @author Anthon Pang <anthonp@nationalfibre.net>
+ * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author Anthon Pang <anthon.pang@gmail.com>
  */
 class BounceMailService
 {

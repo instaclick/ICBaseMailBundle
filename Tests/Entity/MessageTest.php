@@ -12,7 +12,7 @@ use IC\Bundle\Base\MailBundle\Entity\Message;
  *
  * @group Model
  *
- * @author Guilherme Blanco <gblanco@nationalfibre.net>
+ * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
  */
 class MessageTest extends \PHPUnit_Framework_TestCase
 {

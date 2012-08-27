@@ -15,7 +15,8 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  *
- * @author Anthon Pang <anthonp@nationalfibre.net>
+ * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author Anthon Pang <anthon.pang@gmail.com>
  */
 class ICBaseMailExtension extends Extension
 {

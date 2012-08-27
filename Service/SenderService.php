@@ -15,9 +15,9 @@ use IC\Bundle\Base\MailBundle\Exception\SenderServiceException;
 /**
  * Mail Sender Service
  *
- * @author Juti Noppornpitak <jutin@nationalfibre.net>
- * @author Guilherme Blanco <gblanco@nationalfibre.net>
- * @author Anthon Pang <anthonp@nationalfibre.net>
+ * @author Juti Noppornpitak <jnopporn@shiroyuki.com>
+ * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author Anthon Pang <anthon.pang@gmail.com>
  */
 class SenderService extends ContainerAware
 {

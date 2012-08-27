@@ -12,8 +12,8 @@ use IC\Bundle\Base\MailBundle\Service\ComposerService;
  *
  * @group Service
  *
- * @author Guilherme Blanco <gblanco@nationalfibre.net>
- * @author Juti Noppornpitak <jutin@nationalfibre.net>
+ * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author Juti Noppornpitak <jnopporn@shiroyuki.com>
  */
 class ComposerServiceTest extends \PHPUnit_Framework_TestCase
 {

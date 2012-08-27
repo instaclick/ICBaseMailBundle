@@ -14,7 +14,7 @@ use IC\Bundle\Base\MailBundle\DependencyInjection\ICBaseMailExtension;
  *
  * @group DependencyInjection
  *
- * @author Guilherme Blanco <gblanco@nationalfibre.net>
+ * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
  */
 class ICBaseMailExtensionTest extends \PHPUnit_Framework_TestCase
 {

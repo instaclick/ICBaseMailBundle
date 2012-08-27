@@ -10,7 +10,7 @@ use IC\Bundle\Base\MailBundle\Entity\Message;
 /**
  * Sender Service Exception
  *
- * @author Juti Noppornpitak <jutin@nationalfibre.net>
+ * @author Juti Noppornpitak <jnopporn@shiroyuki.com>
  */
 class SenderServiceException extends \Exception
 {

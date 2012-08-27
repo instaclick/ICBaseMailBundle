@@ -14,7 +14,7 @@ use IC\Bundle\Base\MailBundle\ICBaseMailBundle;
  *
  * @group Bundle
  *
- * @author Guilherme Blanco <gblanco@nationalfibre.net>
+ * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
  */
 class ICBaseMailBundleTest extends \PHPUnit_Framework_TestCase
 {
@@ -22,7 +22,7 @@ class ICBaseMailBundleTest extends \PHPUnit_Framework_TestCase
     {
         $container = new ContainerBuilder();
         $bundle    = new ICBaseMailBundle();
-        
+
         $bundle->build($container);
     }
 }

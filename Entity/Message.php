@@ -8,8 +8,8 @@ namespace IC\Bundle\Base\MailBundle\Entity;
 /**
  * The model of e-mail package used to send out with SwiftMailer.
  *
- * @author Juti Noppornpitak <jutin@nationalfibre.net>
- * @author Anthon Pang <anthonp@nationalfibre.net>
+ * @author Juti Noppornpitak <jnopporn@shiroyuki.com>
+ * @author Anthon Pang <anthon.pang@gmail.com>
  */
 class Message
 {

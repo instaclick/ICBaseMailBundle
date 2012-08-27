@@ -14,8 +14,8 @@ use IC\Bundle\Base\MailBundle\Service\BounceMailService;
  *
  * @group Service
  *
- * @author Guilherme Blanco <gblanco@nationalfibre.net>
- * @author Anthon Pang <anthonp@nationalfibre.net>
+ * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author Anthon Pang <anthon.pang@gmail.com>
  */
 class BounceMailServiceTest extends \PHPUnit_Framework_TestCase
 {
@@ -51,9 +51,10 @@ class BounceMailServiceTest extends \PHPUnit_Framework_TestCase
     public function testExecute()
     {
         $bounceMailService = new BounceMailService();
+        $bounceMailHandler = new BounceMailHandler();
 
         $bounceMailService->setDebug(true);
-        $bounceMailService->setBounceMailHandler(new BounceMailHandler());
+        $bounceMailService->setBounceMailHandler($bounceMailHandler);
         $bounceMailService->setLocalMailboxPath(__DIR__.'/../DataFixtures/inbox.eml');
 
         ob_start();

@@ -13,7 +13,7 @@ use IC\Bundle\Base\MailBundle\Entity\Message;
  *
  * @group Exception
  *
- * @author Guilherme Blanco <gblanco@nationalfibre.net>
+ * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
  */
 class SenderServiceExceptionTest extends \PHPUnit_Framework_TestCase
 {
