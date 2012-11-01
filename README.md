@@ -32,7 +32,7 @@ Installing this bundle can be done through these simple steps:
     public function registerBundles()
     {
         // ...
-        $bundles[] = new IC\Bundle\Base\MailBundle\ICBaseTestBundle();
+        $bundles[] = new IC\Bundle\Base\MailBundle\ICBaseMailBundle();
     
         return $bundles;
     }
