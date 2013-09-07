@@ -267,7 +267,3 @@ $message->setParameterList(array('username' => 'Guilherme Blanco'));
 
 $sentSuccessfully = $senderService->send($message);
 ```
-
-### BounceMail Service
-
-TBD

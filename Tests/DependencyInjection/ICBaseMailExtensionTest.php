@@ -53,8 +53,7 @@ class ICBaseMailExtensionTest extends \PHPUnit_Framework_TestCase
         return array(
             array(
                 array(
-                    'composer'    => array(),
-                    'mail_bounce' => array()
+                    'composer'    => array()
                 )
             ),
         );
@@ -68,7 +67,6 @@ class ICBaseMailExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertDICConstructorArguments('ic_base_mail.service.composer', array());
         $this->assertDICConstructorArguments('ic_base_mail.service.sender', array());
-        $this->assertDICConstructorArguments('ic_base_mail.service.bounce_mail', array());
     }
 
     private function createFullConfiguration()
@@ -79,15 +77,6 @@ class ICBaseMailExtensionTest extends \PHPUnit_Framework_TestCase
                     'name'    => 'John Smith',
                     'address' => 'jsmith@nationfibre.net'
                 )
-            ),
-            'mail_bounce' => array(
-                'mailhost' => 'imap.gmail.com',
-                'port'     => 993,
-                'username' => 'foobar',
-                'password' => 'f0ob4rW00',
-                'service'  => 'imap',
-                'option'   => 'ssl',
-                'mailbox'  => 'INBOX'
             )
         );
 

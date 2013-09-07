@@ -25,24 +25,6 @@
             </call>
         </service>
 
-        <!-- Process Services: Mail Bouncer -->
-        <service id="ic_base_mail.service.bounce_mail" class="IC\Bundle\Base\MailBundle\Service\BounceMailService">
-            <call method="setBounceMailHandler">
-                <argument type="service" id="ic_base_mail.service.bounce_mail_handler"/>
-            </call>
-        </service>
-
-        <!-- Process Services: Mail Bouncer Handler -->
-        <service id="ic_base_mail.service.bounce_mail_handler" class="BounceMailHandler\BounceMailHandler">
-            <property name="mailhost">%ic_base_mail.mail_bounce.mailhost%</property>
-            <property name="port">%ic_base_mail.mail_bounce.port%</property>
-            <property name="mailbox_username">%ic_base_mail.mail_bounce.username%</property>
-            <property name="mailbox_password">%ic_base_mail.mail_bounce.password%</property>
-            <property name="service">%ic_base_mail.mail_bounce.service%</property>
-            <property name="service_option">%ic_base_mail.mail_bounce.option%</property>
-            <property name="boxname">%ic_base_mail.mail_bounce.mailbox%</property>
-        </service>
-
     </services>
 
 </container>

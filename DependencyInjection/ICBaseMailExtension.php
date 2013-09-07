@@ -40,15 +40,5 @@ class ICBaseMailExtension extends Extension
                 $config['composer']['default_sender'][$parameter]
             );
         }
-
-        // Mail bounce configuration values
-        $parameterList = array('mailhost', 'port', 'username', 'password', 'service', 'option', 'mailbox');
-
-        foreach ($parameterList as $parameter) {
-            $container->setParameter(
-                $this->getAlias() . '.mail_bounce.' . $parameter,
-                $config['mail_bounce'][$parameter]
-            );
-        }
     }
 }
