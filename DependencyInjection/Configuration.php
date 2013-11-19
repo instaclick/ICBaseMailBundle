@@ -31,6 +31,7 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('composer')
                     ->children()
                         ->arrayNode('default_sender')
+                        ->isRequired()
                             ->children()
                                 ->scalarNode('name')
                                     ->isRequired()
