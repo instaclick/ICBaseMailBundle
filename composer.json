@@ -25,5 +25,10 @@
         "psr-0": { "IC\\Bundle\\Base\\MailBundle": "" }
     },
     "target-dir": "IC/Bundle/Base/MailBundle",
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
 }
