@@ -19,7 +19,7 @@
     },
     "require-dev": {
         "instaclick/base-test-bundle": "dev-master",
-        "phpunit/PHPUnit": "3.7.*"
+        "phpunit/phpunit": "~3.7"
     },
     "autoload": {
         "psr-0": { "IC\\Bundle\\Base\\MailBundle": "" }
